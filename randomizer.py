@@ -1,5 +1,5 @@
 import random
-from traits import list_of_good_traits
+from list_of_traits import list_of_good_traits
 
 
 def random_good_traits(number=2):
