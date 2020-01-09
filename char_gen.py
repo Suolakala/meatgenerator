@@ -26,6 +26,7 @@ elif sys.argv[1] == "background":
 elif sys.argv[1] == "npc":
     print("TODO this command is not implemented :D")
 elif sys.argv[1] == "newpc":
-    PlayerCharacter()
+    newchar = PlayerCharacter()
+    newchar.printchar("textfile")
 else:
     print(error_string)
