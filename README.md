@@ -1,4 +1,4 @@
-# meatgenerator
+# Meat Generator
 Character Generator for Imperial Guardsmen
 
 In development :)

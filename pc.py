@@ -13,28 +13,29 @@ class PlayerCharacter:
         self.generate_stats()
         self.background = random_good_traits()
         self.update_traits_to_stats()
-        self.printchar()
+        self.print_char()
 
-    def printchar(self, format="console"):
+    def print_char(self, format="console"):
          if format == "console":
             print("Created char: {}".format(self.name))
             for trait in self.background:
                 print(trait.name)
             print_stats(self.stats)
          elif format == "textfile":
-            self.print_chart_to_txt()
+            self.print_char_to_txt()
 
          else:
             raise Exception("Format not supported, supported printing:\nconsole\ntextfile")
 
-    def print_chart_to_txt(self):
+    def print_char_to_txt(self):
         script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
         rel_path = "created_chars\\{}.txt".format(self.name)
         abs_file_path = os.path.join(script_dir, rel_path)
         print(abs_file_path)
         text_file = open(abs_file_path, "w")
         text_file.write("{}\n".format(self.name))
-        text_file.write("Rest TODO\n".format(self.name))
+        for stat in self.stats:
+            text_file.write("{}:{}\n".format(self.stats[stat].description, str(self.stats[stat].number)))
 
     def generate_stats(self):
         self.generate_basic_stats()
@@ -80,6 +81,7 @@ class Stat:
             self.number = d1+d2+d3+d4-3
         if description is not "Koulutus" and self.number < 3:
             self.number = 3
+
 
 def print_stats(list_of_stats):
     for stat in list_of_stats:

@@ -27,6 +27,6 @@ elif sys.argv[1] == "npc":
     print("TODO this command is not implemented :D")
 elif sys.argv[1] == "newpc":
     newchar = PlayerCharacter()
-    newchar.printchar("textfile")
+    newchar.print_char("textfile")
 else:
     print(error_string)
