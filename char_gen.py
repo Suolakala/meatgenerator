@@ -3,6 +3,7 @@
 import sys
 from randomizer import random_good_traits
 from pc import PlayerCharacter
+import printer
 
 error_string = "Did not get command. List of commands:\n" \
                "traits <amount of traits, optional>. Usage: chargen.py traits 1\n" \
@@ -27,6 +28,7 @@ elif sys.argv[1] == "npc":
     print("TODO this command is not implemented :D")
 elif sys.argv[1] == "newpc":
     newchar = PlayerCharacter()
-    newchar.print_char("textfile")
+    printer.print_char(newchar, "textfile")
+    printer.print_char_pdf(newchar)
 else:
     print(error_string)
